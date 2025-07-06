@@ -1,0 +1,12 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    container_name: api
+    ports:
+      # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no diretório /app do contêiner
+      # Isso permite o hot-reload e a persistência do banco de dados SQLite
+      - .:/app
